@@ -1,0 +1,105 @@
+source-tree:
+  slug: osi
+  url: index.md
+  children:
+  - slug: introduction
+    url: index.md
+    children:
+	-  slug: videos
+	   url: videos.md
+	   children:
+	-  slug: map
+	   url: map.md
+	   children:
+	-  slug: timeline
+	   url: timeline.md
+	   children:
+  - slug: executive-summary
+    url: executive-summary.md
+    children:
+  - slug: case-studies-budgets
+    url: case-studies-budgets.md
+    children:
+    - slug: lost-money
+      url: lost-money.md
+      children:
+    - slug: openbudgetoakland
+      url: openbudgetoakland.md
+      children:
+    - slug: cbga
+      url: cbga.md
+      children:
+    - slug: bosnia
+      url: bosnia.md
+      children:
+    - slug: expert-grup
+      url: expert-grup.md
+      children:
+  - slug: case-studies-spending
+    url: case-studies-spending.md
+    children:
+    - slug: caring-for-my-neigh
+      url: caring-for-my-neigh.md
+      children:
+    - slug: okfn-greece
+      url: okfn-greece.md
+      children:
+    - slug: eu-spending-data
+      url: eu-spending-data.md
+      children:
+    - slug: farmsubsidy
+      url: farmsubsidy.md
+      children:
+    - slug: farmsubsidies-mexico
+      url: farmsubsidies-mexico.md
+      children:
+    - slug: india-spend
+      url: india-spend.md
+      children:
+    - slug: supervizor
+      url: Supervizor.md
+      children:
+  - slug: case-studies-procurement
+    url: case-studies-procurement.md
+    children:
+    - slug: hutspace
+      url: hutspace.md
+      children:
+    - slug: texty
+      url: texty.md
+      children:
+    - slug: opented
+      url: opented.md
+      children:
+  - slug: case-studies-other
+    url: case-studies-other.md
+    children:
+    - slug: openspending
+      url: openspending.md
+      children:
+    - slug: opening-university
+      url: opening-university.md
+      children:
+  - slug: conclusions
+    url: conclusions.md
+    children:
+  - slug: appendix
+    url: appendix.md
+    children:
+    - slug: open-budgets-open-data
+      url: appendix-open-budgets-open-data.md
+      children:
+    - slug: tool-ecosystem
+      url: tool-ecosystem.md
+      children:
+    - slug: machinereadfaq
+      url: machinereadfaq.md
+      children:
+    - slug: privacyguide
+      url: privacyguide.md
+      children:
+    - slug: other-handy-datasets
+      url: other-handy-datasets.md
+      children:
+
+root-dir: https://raw.github.com/openspending/dotorg/master/resources/osi/
