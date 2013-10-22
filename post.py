@@ -24,13 +24,13 @@ class Bot():
 		"""
 		if node.has_key("parent"):
 			node['id'] = self.wp.new_page(title = node['title'],
-										  wp_slug = node['slug'],
-										  description = node['content'],
-										  wp_page_parent_id = node['parent'])
+							wp_slug = node['slug'],
+							description = node['content'],
+							wp_page_parent_id = node['parent'])
 		else:
 			node['id'] = self.wp.new_page(title = node['title'],
-										  wp_slug = node['slug'],
-										  description = node['content'])
+							wp_slug = node['slug'],
+							description = node['content'])
 		if node['children']:
 			for x in node['children']:
 				x['parent'] = node['id']
