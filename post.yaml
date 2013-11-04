@@ -1,105 +1,64 @@
+root-name: https://raw.github.com/openspending/dotorg/master/resources/osi/
 source-tree:
-  slug: osi
-  url: index.md
   children:
-  - slug: introduction
-    url: index.md
-    children:
-	-  slug: videos
-	   url: videos.md
-	   children:
-	-  slug: map
-	   url: map.md
-	   children:
-	-  slug: timeline
-	   url: timeline.md
-	   children:
-  - slug: executive-summary
-    url: executive-summary.md
-    children:
-  - slug: case-studies-budgets
-    url: case-studies-budgets.md
-    children:
-    - slug: lost-money
-      url: lost-money.md
-      children:
-    - slug: openbudgetoakland
-      url: openbudgetoakland.md
-      children:
-    - slug: cbga
-      url: cbga.md
-      children:
-    - slug: bosnia
-      url: bosnia.md
-      children:
-    - slug: expert-grup
-      url: expert-grup.md
-      children:
-  - slug: case-studies-spending
-    url: case-studies-spending.md
-    children:
-    - slug: caring-for-my-neigh
-      url: caring-for-my-neigh.md
-      children:
-    - slug: okfn-greece
-      url: okfn-greece.md
-      children:
-    - slug: eu-spending-data
-      url: eu-spending-data.md
-      children:
-    - slug: farmsubsidy
-      url: farmsubsidy.md
-      children:
-    - slug: farmsubsidies-mexico
-      url: farmsubsidies-mexico.md
-      children:
-    - slug: india-spend
-      url: india-spend.md
-      children:
-    - slug: supervizor
-      url: Supervizor.md
-      children:
-  - slug: case-studies-procurement
-    url: case-studies-procurement.md
-    children:
-    - slug: hutspace
-      url: hutspace.md
-      children:
-    - slug: texty
-      url: texty.md
-      children:
-    - slug: opented
-      url: opented.md
-      children:
-  - slug: case-studies-other
-    url: case-studies-other.md
-    children:
-    - slug: openspending
-      url: openspending.md
-      children:
-    - slug: opening-university
-      url: opening-university.md
-      children:
-  - slug: conclusions
-    url: conclusions.md
-    children:
-  - slug: appendix
-    url: appendix.md
-    children:
-    - slug: open-budgets-open-data
-      url: appendix-open-budgets-open-data.md
-      children:
-    - slug: tool-ecosystem
-      url: tool-ecosystem.md
-      children:
-    - slug: machinereadfaq
-      url: machinereadfaq.md
-      children:
-    - slug: privacyguide
-      url: privacyguide.md
-      children:
-    - slug: other-handy-datasets
-      url: other-handy-datasets.md
-      children:
-
-root-dir: https://raw.github.com/openspending/dotorg/master/resources/osi/
+  - children:
+    - {children: null, id: 1088, name: /videos.md, parent: 1084, slug: videos}
+    - {children: null, id: 1092, name: /map.md, parent: 1084, slug: map}
+    - {children: null, id: 1096, name: /timeline.md, parent: 1084, slug: timeline}
+    id: 1084
+    name: /index.md
+    parent: 1082
+    slug: introduction
+  - {children: null, id: 1098, name: /executive-summary.md, parent: 1082, slug: executive-summary}
+  - children:
+    - {children: null, id: 1125, name: /lost-money.md, parent: 1123, slug: lost-money}
+    - {children: null, id: 1128, name: /openbudgetoakland.md, parent: 1123, slug: openbudgetoakland}
+    - {children: null, id: 1132, name: /cbga.md, parent: 1123, slug: cbga}
+    - {children: null, id: 1135, name: /bosnia.md, parent: 1123, slug: bosnia}
+    - {children: null, id: 1137, name: /expert-grup.md, parent: 1123, slug: expert-grup}
+    id: 1123
+    name: /case-studies-budgets.md
+    parent: 1082
+    slug: case-studies-budgets
+  - children:
+    - {children: null, id: 1141, name: /caring-for-my-neigh.md, parent: 1139, slug: caring-for-my-neigh}
+    - {children: null, id: 1145, name: /okfn-greece.md, parent: 1139, slug: okfn-greece}
+    - {children: null, id: 1147, name: /eu-spending-data.md, parent: 1139, slug: eu-spending-data}
+    - {children: null, id: 1149, name: /farmsubsidy.md, parent: 1139, slug: farmsubsidy}
+    - {children: null, id: 1152, name: /farmsubsidies-mexico.md, parent: 1139, slug: farmsubsidies-mexico}
+    - {children: null, id: 1155, name: /india-spend.md, parent: 1139, slug: india-spend}
+    - {children: null, id: 1157, name: /Supervizor.md, parent: 1139, slug: supervizor}
+    id: 1139
+    name: /case-studies-spending.md
+    parent: 1082
+    slug: case-studies-spending
+  - children:
+    - {children: null, id: 1161, name: /hutspace.md, parent: 1159, slug: hutspace}
+    - {children: null, id: 1163, name: /texty.md, parent: 1159, slug: texty}
+    - {children: null, id: 1165, name: /opented.md, parent: 1159, slug: opented}
+    id: 1159
+    name: /case-studies-procurements.md
+    parent: 1082
+    slug: case-studies-procurements
+  - children:
+    - {children: null, id: 1169, name: /openspending.md, parent: 1167, slug: openspending}
+    - {children: null, id: 1171, name: /opening-university.md, parent: 1167, slug: opening-university}
+    id: 1167
+    name: /case-studies-other.md
+    parent: 1082
+    slug: case-studies-other
+  - {children: null, id: 1174, name: /conclusions.md, parent: 1082, slug: conclusions}
+  - children:
+    - {children: null, id: 1105, name: /appendix-open-budgets-open-data.md, parent: 1103,
+      slug: open-budgets-open-data}
+    - {children: null, id: 1112, name: /tool-ecosystem.md, parent: 1103, slug: tool-ecosystem}
+    - {children: null, id: 1110, name: /machinereadfaq.md, parent: 1103, slug: machinereadfaq}
+    - {children: null, id: 1115, name: /privacyguide.md, parent: 1103, slug: privacyguide}
+    - {children: null, id: 1121, name: /other-handy-datasets.md, parent: 1103, slug: other-handy-datasets}
+    id: 1103
+    name: /appendix.md
+    parent: 1082
+    slug: appendix
+  id: 1082
+  name: /index.md
+  slug: osi

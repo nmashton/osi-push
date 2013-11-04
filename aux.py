@@ -13,8 +13,8 @@ def apply_to_tree(tree,f):
 	}
 	"""
 	newtree = f(copy(tree))
-	if newtree['children']:
-		newtree['children'] = [f(x) for x in newtree['children']]
+	if newtree.has_key("children") and newtree['children']:
+		newtree['children'] = [apply_to_tree(x,f) for x in newtree['children']]
 	return newtree
 
 def get_content(node,root=""):
@@ -24,7 +24,11 @@ def get_content(node,root=""):
 	the string read from the given URL.
 	"""
 	newnode = copy(node)
-	newnode['content'] = urllib2.urlopen(root + newnode['url']).read()
+	name = newnode['name']
+	if re.findall(r'^/.*',name):
+		newnode['content'] = urllib2.urlopen(root + name.split("/")[1]).read()
+	else:
+		newnode['content'] = urllib2.urlopen(name).read()
 	return newnode
 
 def parse_content(node):
@@ -34,6 +38,45 @@ def parse_content(node):
 	- fixes "content" to omit metadata
 	"""
 	newnode = copy(node)
-	newnode['title'] = re.search(r'(?<=---\ntitle: ).*(?=\n)', newnode['content']).group(0)
-	newnode['content'] = re.sub(r'---\n.*\n---\n\n', r'', newnode['content'], flags=re.DOTALL)
+	try_title = re.search(r'(?<=---\ntitle: ).*(?=\n)', newnode['content'])
+	# get rid of the metadata block at the start.
+	try_content = re.sub(r'---\n.*\n---\n\n', r'', newnode['content'], flags=re.DOTALL)
+	# strip out any title-level lines.
+	try_content = re.sub(r'^# .*\n', r'', try_content, flags=re.MULTILINE)
+	if try_title:
+		newnode['title'] = re.sub(r'"', r'', try_title.group(0)).strip()
+	else:
+		newnode['title'] = "Untitled"
+	if try_content:
+		newnode['content'] = try_content.strip()
+	else:
+		newnode['content'] = "No content"	
 	return newnode
+
+def prune_node(node):
+	"""
+	Takes a node decorated with "content" and "title" and throws
+	that crap out.
+	"""
+	newnode = copy(node)
+	if newnode.has_key("content"):
+		newnode.pop("content")
+	if newnode.has_key("title"):
+		newnode.pop("title")
+	return newnode
+
+def test_prune(node):
+	"""
+	For debugging purposes...
+	"""
+	newnode = copy(node)
+	if newnode.has_key("content"):
+		newnode["content"] = "true"
+	else:
+		newnode["content"] = "FALSE"
+	return newnode
+
+def prune_tree(node):
+	newnode = copy(node)
+	return apply_to_tree(newnode,prune_node)
+#	return apply_to_tree(newnode,test_prune)
