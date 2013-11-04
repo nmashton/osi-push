@@ -6,7 +6,7 @@ source-tree:
     - {children: null, id: 1092, name: /map.md, parent: 1084, slug: map}
     - {children: null, id: 1096, name: /timeline.md, parent: 1084, slug: timeline}
     id: 1084
-    name: /index.md
+    name: /introduction.md
     parent: 1082
     slug: introduction
   - {children: null, id: 1098, name: /executive-summary.md, parent: 1082, slug: executive-summary}
