@@ -1,3 +1,6 @@
+id-sequence: [1082, 1084, 1088, 1092, 1096, 1098, 1123, 1125, 1128, 1132, 1135, 1137,
+  1139, 1141, 1145, 1147, 1149, 1152, 1155, 1157, 1159, 1161, 1163, 1165, 1167, 1169,
+  1171, 1174, 1103, 1105, 1112, 1110, 1115, 1121]
 root-name: https://raw.github.com/openspending/dotorg/master/resources/osi/
 source-tree:
   children:
@@ -61,4 +64,6 @@ source-tree:
     slug: appendix
   id: 1082
   name: /index.md
+  parent: 928
   slug: osi
+wp-site: http://community.openspending.org/

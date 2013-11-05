@@ -17,6 +17,20 @@ def apply_to_tree(tree,f):
 		newtree['children'] = [apply_to_tree(x,f) for x in newtree['children']]
 	return newtree
 
+def treemapseq(tree,f):
+	"""
+	Recursively apply a function to every node of a tree.
+	Accumulate the returns into a sequence. 
+	"""
+	result = []
+	unvisited = [copy(tree)]
+	while unvisited:
+		now = unvisited.pop()
+		result.append(f(now))
+		if now.has_key("children") and now["children"]:
+			unvisited += now["children"]
+	return result
+
 def get_content(node,root=""):
 	"""
 	Takes a tree dictionary whose root has a 'url' attribute, returns
@@ -52,6 +66,27 @@ def parse_content(node):
 	else:
 		newnode['content'] = "No content"	
 	return newnode
+
+def get_next(item,array):
+	if not array.count(item):
+		return None
+	else:
+		ind = array.index(item)
+		if ind == (len(array) - 1):
+			return None
+		else:
+			return array[array.index(item) + 1]
+
+def add_links(node,order,titledict,site):
+	newnode = copy(node)
+	if not node.has_key("id"):
+		return newnode
+	else:
+		if get_next(newnode["id"],order) and titledict.has_key(get_next(newnode["id"],order)):
+			newnode["content"] += "\n\n**Next**: [" + titledict[get_next(newnode["id"],order)] + "](" + site + "?page_id=" + str(get_next(newnode["id"],order)) + ")"
+		if newnode.has_key("parent") and titledict.has_key(newnode["parent"]):
+			newnode["content"] += "\n\n**Up**: [" + titledict[newnode["parent"]] + "](" + site + "?page_id=" + str(newnode["parent"]) + ")"
+		return newnode
 
 def prune_node(node):
 	"""

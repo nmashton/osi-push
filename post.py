@@ -1,5 +1,6 @@
 import pywordpress
 import yaml
+from copy import copy
 from aux import *
 
 class Bot():
@@ -10,8 +11,13 @@ class Bot():
 		# Load up the post configuration YAML file and get the data.
 		# Initialize the list of page IDs.
 		self.config = yaml.safe_load(open(configfile))
+		self.wp_site = self.config['wp-site']
 		self.data = self.config['source-tree']
 		self.ids = []
+		self.titles = {}
+		self.sequence = []
+		if self.config.has_key("id-sequence"):
+			self.sequence = self.config["id-sequence"]
 
 	# Note that I implement all operations on the data tree
 	# as operations on immutable objects rather than mutating the
@@ -32,8 +38,27 @@ class Bot():
 		attributes, with a new tree whose "content" attributes have been
 		stripped of title information and whose "title" attribute has
 		been grabbed from the "content" attribute.
+
+		Also build a dictionary of IDs => titles.
+
+		Finally, decorate the bot's data tree with links to "up"
+		and "next" pages, as determined by the (optional) ordering
+		of IDs in the config file.
 		"""
 		self.data = apply_to_tree(self.data, parse_content)
+		def title_id(node):
+			if node.has_key("id"):
+				return {node["id"]: node["title"]}
+			else:
+				return {}
+		def merge_dicts(dicts):
+			value = {}
+			for d in dicts:
+				value = dict(value.items() + d.items())
+			return value
+		self.titles = merge_dicts(treemapseq(self.data, title_id))
+		if self.sequence:
+			self.data = apply_to_tree(self.data, lambda d: add_links(d, self.sequence, self.titles, self.wp_site))
 
 	def build_pages(self,node):
 		"""
@@ -78,10 +103,8 @@ class Bot():
 		"title" and "content" attributes first.
 		"""
 		print "Dumping data tree to post.yaml"
-		the_dump = {
-			"root-name": self.config["root-name"],
-			"source-tree": prune_tree(self.data)
-		}
+		the_dump = copy(self.config)
+		the_dump["source-tree"] = prune_tree(self.data)
 		f = open("post.yaml", "w")
 		f.write(yaml.dump(the_dump))
 		f.close()
