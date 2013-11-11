@@ -1,0 +1,6 @@
+[wordpress]
+url = http://community.openspending.org/
+user = nmashton
+password = jOltAk7ElEl
+delay = 0
+cachefile = None

@@ -24,11 +24,11 @@ source-tree:
     parent: 1082
     slug: case-studies-budgets
   - children:
-    - {children: null, id: 1141, name: /caring-for-my-neigh.md, parent: 1139, slug: caring-for-my-neigh}
+    - {children: null, id: 1141, name: /caring-for-my-neigh.md, parent: 1139, slug: caring-for-my-neighbourhood}
     - {children: null, id: 1145, name: /okfn-greece.md, parent: 1139, slug: okfn-greece}
     - {children: null, id: 1147, name: /eu-spending-data.md, parent: 1139, slug: eu-spending-data}
     - {children: null, id: 1149, name: /farmsubsidy.md, parent: 1139, slug: farmsubsidy}
-    - {children: null, id: 1152, name: /farmsubsidies-mexico.md, parent: 1139, slug: farmsubsidies-mexico}
+    - {children: null, id: 1152, name: /farmsubsidies-mexico.md, parent: 1139, slug: farm-subsidies-mexico}
     - {children: null, id: 1155, name: /india-spend.md, parent: 1139, slug: india-spend}
     - {children: null, id: 1157, name: /Supervizor.md, parent: 1139, slug: supervizor}
     id: 1139
@@ -65,5 +65,5 @@ source-tree:
   id: 1082
   name: /index.md
   parent: 928
-  slug: osi
+  slug: mappingcommunity
 wp-site: http://community.openspending.org/
